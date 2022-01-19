@@ -1,0 +1,17 @@
+Fusionner (merger/squash/rebase) les 2 derniers commits de la branche :
+
+git rebase -i HEAD~2
+
+Forcer un push après un rebase :
+
+git push -f
+
+Modifier le commit le plus récent :
+
+git commit --amend
+
+Modifier un commit antérieur au dernier :
+
+- Identifier le hash entier du commit
+- git commit --fixup=hash-du-commit fichiers
+- git rebase -i master --autosquash
