@@ -120,8 +120,8 @@ function tableauDeBord()
 
 	request.done(function(response)
 	{
-		$("#nbUtilisateurs").html(`Il y a ${response[0].value} utilisateur${parseInt(response[0].value) === 0 ? '' : 's'}. ${parseInt(response[1].value) === 0 ? '' : `<button class="btn btn-primarycolor float-right" id="nv-contact">Ajouter un nouveau contact</button>`}`);
-		$("#nbCategories").html(`Il y a ${response[1].value} catégorie${parseInt(response[1].value) === 0 ? '' : 's'}. <button class="btn btn-primarycolor float-right" id="nv-categorie">Ajouter une nouvelle catégorie</button>`);
+		$("#nbContacts").html(`Il y a ${response[0].value} contact${parseInt(response[0].value) < 2 ? '' : 's'}. ${parseInt(response[1].value) === 0 ? '' : `<button class="btn btn-primarycolor float-right" id="nv-contact">Ajouter un nouveau contact</button>`}`);
+		$("#nbCategories").html(`Il y a ${response[1].value} catégorie${parseInt(response[1].value) < 2 ? '' : 's'}. <button class="btn btn-primarycolor float-right" id="nv-categorie">Ajouter une nouvelle catégorie</button>`);
 		obtenirCategoriesStats();
 		hideSection(".accueil");
 	});
@@ -156,7 +156,7 @@ function listeContacts()
 // 		}
 // 		else
 // 		{
-// 			let html = `<h2 class="mt-4">Liste des utilisateurs</h2>
+// 			let html = `<h2 class="mt-4">Gestion des contacts</h2>
 // 				<table class="table">
 // 					<thead>
 // 						<tr>
@@ -206,7 +206,9 @@ function listeContacts()
 			dataSource: 'http://localhost:3000/contacts',
 			locator: '',
 			showNavigator: true,
-			totalNumber: 3,
+			totalNumberLocator: function(response) {
+				return response.length;
+			},
 			pageSize: 2,
 			className: 'paginationjs-theme-blueprimary',
 			ajax: {
@@ -221,7 +223,7 @@ function listeContacts()
 				}
 				else
 				{
-					let dataHtml = `<h2 class="mt-4">Liste des utilisateurs</h2>`;
+					let dataHtml = `<h2 class="mt-4">Gestion des contacts</h2>`;
 
 					dataHtml += `<table class="table">
 						<thead>
@@ -462,7 +464,7 @@ function listeCategories()
 //
 // 	request.done(function(response)
 // 	{
-// 		let html = '<h2 class="mt-4">Liste des catégories</h2>';
+// 		let html = '<h2 class="mt-4">Gestion des catégories</h2>';
 //
 // 		if (response.length === 0)
 // 		{
@@ -527,7 +529,7 @@ function listeCategories()
 				}
 			},
 			callback: function(response, pagination) {
-				let dataHtml = `<h2 class="mt-4">Liste des catégories</h2>`;
+				let dataHtml = `<h2 class="mt-4">Gestion des catégories</h2>`;
 
 
 				if (response.length === 0)
@@ -773,12 +775,12 @@ function permissionsAjoutContact()
 	{
 		if (response.value == 0)
 		{
-			$('#pagination').prev().html(`<h2 class="mt-4">Liste des utilisateurs</h2><div class="alert alert-danger mt-4" role="alert">Il n'y a aucun contact dans la liste. Avant de pouvoir ajouter un nouveau contact, vous devez ajouter au minimum une catégorie. <a href="#" id="nv-categorie">Cliquez ici pour ajouter une  nouvelle catégorie.</a></div>`);
+			$('#pagination').prev().html(`<h2 class="mt-4">Gestion des contacts</h2><div class="alert alert-danger mt-4" role="alert">Il n'y a aucun contact dans la liste. Avant de pouvoir ajouter un nouveau contact, vous devez ajouter au minimum une catégorie. <a href="#" id="nv-categorie">Cliquez ici pour ajouter une  nouvelle catégorie.</a></div>`);
 			$('#pagination').hide();
 		}
 		else
 		{
-			$('#pagination').prev().html(`<h2 class="mt-4">Liste des utilisateurs</h2><div class="alert alert-danger mt-4" role="alert">Il n'y a aucun contact dans la liste. <a href="#" id="nv-contact">Cliquez ici pour ajouter un nouveau contact.</a></div>`);
+			$('#pagination').prev().html(`<h2 class="mt-4">Gestion des contacts</h2><div class="alert alert-danger mt-4" role="alert">Il n'y a aucun contact dans la liste. <a href="#" id="nv-contact">Cliquez ici pour ajouter un nouveau contact.</a></div>`);
 			$('#pagination').hide();
 		}
 
@@ -823,7 +825,7 @@ function obtenirCategoriesStats()
 		else
 		{
 			response.map((categorie) => {
-				html += `<button type="button" class="btn btn-secondarycolor my-2">${categorie.nom} <span class="badge badge-light">${categorie.usage}</span></button><br />`;
+				html += `<button type="button" class="btn btn-secondarycolor my-2 w-50">${categorie.nom} <span class="badge badge-light float-right align-middle">${categorie.usage}</span></button><br />`;
 			});
 		}
 

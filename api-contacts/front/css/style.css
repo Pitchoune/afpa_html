@@ -47,6 +47,10 @@ nav {
 	border-color: var(--secondarycolorhover);
 }
 
+#listeCategories .badge {
+	margin-top: 4px;
+}
+
 /*
  * Pagination
  */
