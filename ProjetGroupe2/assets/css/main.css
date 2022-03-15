@@ -1,0 +1,237 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;1,200;1,300;1,400;1,500;1,600&display=swap');
+
+/* General */
+body {
+	font-family: 'Poppins', sans-serif;
+}
+
+/*===================================
+------------ CLEMENT ----------------
+===================================*/
+
+.btn-global{
+    background-color: #009dff;
+}
+
+.btn-header{
+    background: linear-gradient(to right,#0181f5 0%,#5db2ff 100%);
+}
+
+.navbar-light .navbar-nav .nav-link, .p-header{
+    font-size: 15px;
+}
+
+.background-clement{
+    background-size: cover !important;
+    background-position:center !important;
+    background-repeat: no-repeat !important;
+}
+
+.footer-list a{
+    font-size: 18px;
+    color: #bababa;
+    line-height: 42px;
+}
+
+.footer-list p {
+    font-size: 18px;
+    color: #bababa;
+}
+
+/*===================================
+------------ Yves ----------------
+===================================*/
+
+/* Blue Blocks Row */
+.blueBlocks {
+	background-color: #83c4ff;
+}
+
+.blueDarkBlock {
+	background-color: #5db2ff;
+}
+
+.blueBlocks .spaces {
+	padding: 30px 40px;
+}
+
+.blueBlocks img {
+	width: 50px;
+	padding-bottom: 10px;
+}
+
+.blueBlocks h3, .blueBlocks p {
+	color: #ffffff;
+}
+
+.blueBlocks a:hover, .blueBlocks a:active {
+	color: #83c4ff !important;
+}
+
+.blueBlocks .blueDarkBlock a:hover, .blueBlocks .blueDarkBlock a:active {
+	color: #5db2ff !important;
+}
+
+/* Welcome Block */
+.welcome {
+	padding-top: 120px;
+	padding-bottom: 220px;
+}
+
+.welcome .pictures {
+	position: relative;
+}
+
+.welcome .picture1 {
+	left: 0px;
+}
+
+.welcome .picture2 {
+	position: absolute;
+	bottom: -94px;
+	right: -37px;
+}
+
+.welcome .docs {
+	padding-left: 90px;
+}
+
+.welcome .docs h2 {
+	position: relative;
+	padding-bottom: 10px;
+	margin-bottom: 40px;
+	color: #1f1f1f;
+	font-weight: 400;
+	font-size: 18px;
+}
+
+.welcome .docs h2::before {
+	left: 0px;
+	bottom: 0px;
+	height: 2px;
+	width: 50px;
+	background: #5db2ff;
+	position: absolute;
+	content: "";
+}
+
+.welcome .docs h3 {
+	font-weight: 500;
+	font-size: 36px;
+	margin-bottom: 10px;
+}
+
+.welcome .docs p {
+	font-size: 16px;
+	color: #727272;
+	line-height: 28px;
+	font-weight: 300;
+	font-style: normal;
+}
+
+.welcome .docs ul {
+	margin: 25px 0px 40px 0px;
+	padding: 0px;
+}
+
+.welcome .docs li {
+	list-style: none;
+	color: #727272;
+	font-size: 16px;
+	line-height: 28px;
+}
+
+.welcome .docs li svg {
+	margin-right: 10px;
+	color: #5db2ff;
+}
+
+.welcome .docs a {
+	color: #5db2ff;
+	border-color: #5db2ff;
+}
+
+.welcome .docs a:hover, .welcome .docs a:active {
+	color: #ffffff;
+	border-color: #5db2ff;
+	background-color: #5db2ff;
+}
+/*===================================
+------------ Rudy ----------------
+===================================*/
+.rudy {
+    padding-top: 120px;
+}
+  
+.ourdep {
+    margin-bottom: 100px;
+    text-align: center;
+}
+
+.ourdep p {
+    font-size: 1.1rem;
+    padding: 10px;
+}
+  
+.ourdep h2 {
+    font-size: 2.5rem;
+}
+
+.ourdep h5 {
+    font-size: 1.5rem;
+}
+
+.carte {
+    margin-top: 50px;
+}
+
+.carte img {
+    height: 230px;
+}
+
+.card {
+    margin: 15px;
+    text-align: left;
+}
+
+#carouselExampleCaptions img {
+    height: 625px;
+}
+
+#carouselExampleCaptions h2 {
+    font-size: 2.5rem;
+}
+
+#carouselExampleCaptions p {
+    font-size: 1.5rem;
+}
+
+.carousel-caption {
+    height: 100%;
+    display: flex !important;
+}
+
+.carousel-caption h5 {
+    font-size: 0.8rem;
+}
+
+/*===================================
+------------ Alexandre ----------------
+===================================*/
+
+.alex-css .col-md-4:nth-child(2),
+.alex-css .col-md-4:last-child {
+  background-color: #f5fbff !important;
+}
+
+.card-body {
+  background-color: #f5fbff !important;
+}
+
+.card {
+  border: none;
+}
+
+.border-top {
+    margin-bottom: 10% !important;
+}
